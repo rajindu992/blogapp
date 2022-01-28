@@ -1,0 +1,122 @@
+<!doctype html>
+{%load static%}
+<html lang="en">
+  <head>
+  	<title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+      <style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+
+
+    }
+
+</style>
+  </head>
+  <body>
+
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+
+                    <img src="{{user.profile.image.url}}" class="author" width="200px" height="200px" alt="">
+                    <div class="welcome"><h3>Welcome </h3>
+                        <a href="{% url 'profile' user.profile.id %}"><button class="btn btn-warning">Profile</button></a>
+
+                    </div>
+
+
+
+	        <ul class="list-unstyled components mb-5">
+
+	          <li >
+	            <a href="{% url 'myarticles' %}" >My Feed</a>
+	          </li>
+              <li >
+	            <a href="{% url 'createarticle' %}" >Create Article</a>
+	          </li>
+
+
+
+
+
+            </ul>
+
+	        <div class="footer">
+	        	<p>All rights reserved</p>
+
+	        </div>
+
+	      </div>
+    	</nav>
+
+
+        <!-- Page Content  -->
+            <div id="content" class="p-1 p-md-0">
+
+                <nav class="navbar navbar-inverse container " style="background-color: navajowhite;">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+
+                        </div>
+
+
+                        <ul class="nav navbar-nav">
+
+                            <li class="active"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
+
+                         </ul>
+                    </div>
+                </nav>
+                    <header class="masthead">
+
+        <!-- Blog Entries Column -->
+                        <div class="col-md-11 mt-3 left">
+                            {% for article in articles %}
+                            <div class="card mb-1">
+                                <div class="card-body">
+                                    <h2 class="card-title">{{ article.title }}</h2>
+                                    <p class="card-text text-muted h6">{{ article.author }} | {{ article.created_on}} </p>
+                                    <p class="card-text">{{article.body|slice:":200" }}</p>
+                                    <a href="{%url 'articledetail' article.id %}" class="btn btn-primary">Read More &rarr;</a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/js/popper.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+  </body>
+</html>
+
+
+

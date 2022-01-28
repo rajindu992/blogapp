@@ -1,0 +1,94 @@
+<!doctype html>
+{%load static%}
+<html lang="en">
+  <head>
+  	<title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  </head>
+  <body>
+
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+                    <img src="{{user.profile.image.url}}" class="author" width="200px" height="200px" alt="">
+                    <div class="welcome"><h3>Welcome </h3>
+                        <button class="btn btn-warning"><a href="{% url 'profile' user.profile.id%}">Profile</a></button>
+
+                    </div>
+
+
+
+	        <ul class="list-unstyled components mb-5">
+
+	          <li >
+	            <a href="" >My Posts</a>
+	          </li>
+
+
+
+
+
+            </ul>
+
+	        <div class="footer">
+	        	<p>All rights reserved</p>
+
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+            <div id="content" class="p-1 p-md-0">
+
+                <nav class="navbar navbar-inverse container " style="background-color: navajowhite;">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+
+                        </div>
+
+
+                        <ul class="nav navbar-nav">
+
+                            <li class="active"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
+
+                         </ul>
+                    </div>
+                </nav>
+
+                <div class="container p-5 mb-2 " style="border:1px solid #cecece">
+                    <div class="form-group">
+                        {% load crispy_forms_tags %}
+                        <form method="post" action=""enctype="multipart/form-data">
+                            {%csrf_token%}
+                            {{form|crispy}}
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <div class="d-grid gap-2 ">
+                                        <button class="btn btn-warning ms-5" type="submit">Post</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/js/popper.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+  </body>
+</html>

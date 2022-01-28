@@ -1,0 +1,98 @@
+<!doctype html>
+{%load static%}
+<html lang="en">
+  <head>
+  	<title>Dobble</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+      <style>
+         .content{
+            margin-left:100px;
+            padding:50px;
+         }
+         .card{
+         height:600px;
+         }
+      </style>
+  </head>
+  <body>
+
+		<div class="wrapper d-flex align-items-stretch p-4 pt-5">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+                    <img src="{{user.profile.image.url}}" class="author" width="200px" height="200px" alt="">
+                    <div class="welcome p-2"><h3>Welcome {{user.first_name}}</h3>
+                        <a href=""><button class="btn btn-warning">Profile</button></a>
+
+                    </div>
+
+
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+            <div id="content" class="p-1 p-md-0">
+
+             <nav class="navbar navbar-inverse container " style="background-color: navajowhite;">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+
+                        </div>
+
+
+                        <ul class="nav navbar-nav">
+
+                            <li class="active"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
+
+                         </ul>
+                    </div>
+             </nav>
+
+
+                <div class="container mt-5">
+                    <div class="row justify-content-center ">
+                        <div class="card col-md-8 col-sm-12 shadow-sm ps-4">
+                             <div class="content " >
+                                <img src="{{ profile.image.url }}" class="rounded-circle ms-5" width="200" height="200" />
+                                {% if profile.user %}
+                                <h3 class="p-2">Name: {{ profile.user.first_name }} <span>{{profile.user.last_name}}</span></h3>
+                                {% endif %}
+
+                                {%if profile.gender%}
+                                <h3  class="p-2">Gender : {{profile.gender}}</h3>
+                                {% endif %}
+                                {% if profile.bio %}
+                                <h3  class="p-2">Bio: {{ profile.bio }}</h3>
+                                {% endif %}
+                                <a href="{% url 'updateprofile' profile.id %}"  class="p-2"><button class="btn btn-warning">Update</button></a>
+                                <a href="{% url 'deleteprofile' profile.id %}"  class="p-2"><button class="btn btn-danger">Delete</button></a>
+
+                             </div>
+                         </div>
+
+
+                    </div>
+
+            </div>
+        </div>
+
+        </div>
+
+
+
+
+    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/js/popper.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+  </body>
+</html>
+

@@ -1,0 +1,120 @@
+<!doctype html>
+{%load static%}
+<html lang="en">
+  <head>
+  	<title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+      <style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .container2{
+        box-shadow: 0 16px 48px #E3E7EB;
+        width:100%;
+
+
+    }
+
+</style>
+  </head>
+  <body>
+
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+                    <img src="{{user.profile.image.url}}" class="author" width="200px" height="200px" alt="">
+                    <div class="welcome"><h3>Welcome </h3>
+                        <a href="{% url 'profile' user.profile.id %}"><button class="btn btn-warning">Profile</button></a>
+
+                    </div>
+
+
+
+	        <ul class="list-unstyled components mb-5">
+
+	          <li >
+	            <a href="" >My Posts</a>
+	          </li>
+
+
+
+
+
+            </ul>
+
+	        <div class="footer">
+	        	<p>All rights reserved</p>
+
+	        </div>
+
+	      </div>
+    	</nav>
+
+
+        <!-- Page Content  -->
+            <div id="content" class="p-1 p-md-0">
+
+                <nav class="navbar navbar-inverse container " style="background-color: navajowhite;">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+
+                        </div>
+
+
+                        <ul class="nav navbar-nav">
+
+                            <li class="active"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
+
+                         </ul>
+                    </div>
+                </nav>
+                    <header class="masthead">
+
+
+               {% for article in articles %}
+                <div class="container  p-2 mb-2" style="border:1px solid #cecece">
+                    <div class="col-sm-10">
+                        <h2>{{article.title}}</h2>
+                        {%if article.author.image%}
+                        <p><img src="{{article.author.image.url}}" class="author" height="100px" width="100px" alt=""></p>
+                        {%endif%}
+                        <strong> <h3>{{article.author}}</h3></strong>
+                        <p>{{article.created_on}}</p>
+
+                    </div>
+                        {%if article.image%}
+                            <p><img id='postimage' src="{{article.image.url}}" width="700px" height="500px" alt=""></p>
+                            {%endif%}
+                            <p>{{article.body}}</p>
+
+
+
+
+
+                </div>
+                        {%endfor%}
+
+            </div>
+        </div>
+
+    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/js/popper.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+  </body>
+</html>

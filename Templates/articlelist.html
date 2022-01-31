@@ -38,7 +38,7 @@
 				<div class="p-4 pt-5">
 
                     <img src="{{user.profile.image.url}}" class="author" width="200px" height="200px" alt="">
-                    <div class="welcome"><h3>Welcome </h3>
+                    <div class="welcome"><h4>Welcome </h4><h5>{{user.email}}</h5>
                         <a href="{% url 'profile' user.profile.id %}"><button class="btn btn-warning">Profile</button></a>
 
                     </div>
@@ -46,6 +46,9 @@
 
 
 	        <ul class="list-unstyled components mb-5">
+                 <li class="active">
+	            <a href="{% url 'myarticles' %}" >Home</a>
+	          </li>
 
 	          <li >
 	            <a href="{% url 'myarticles' %}" >My Feed</a>

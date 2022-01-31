@@ -1,4 +1,4 @@
-
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
@@ -26,5 +26,7 @@ class SignUp(CreateView):
 def loghome(request):
     if request.user.is_authenticated:
         return redirect('posts/articlelist')
+    elif request.user is None:
+        messages.error(request,"No such user")
 
     return render(request, 'registration/loghome.html')

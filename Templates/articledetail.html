@@ -46,10 +46,14 @@
 
 
 	        <ul class="list-unstyled components mb-5">
+                 <li >
+	            <a href="{% url 'userhome' %}" >Home</a>
+	          </li>
 
 	          <li >
 	            <a href="" >My Posts</a>
 	          </li>
+
 
 
 
@@ -86,7 +90,7 @@
                     <header class="masthead">
 
 
-               {% for article in articles %}
+
                 <div class="container  p-2 mb-2" style="border:1px solid #cecece">
                     <div class="col-sm-10">
                         <h2>{{article.title}}</h2>
@@ -107,7 +111,7 @@
 
 
                 </div>
-                        {%endfor%}
+
 
             </div>
         </div>

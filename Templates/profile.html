@@ -2,7 +2,7 @@
 {%load static%}
 <html lang="en">
   <head>
-  	<title>Dobble</title>
+  	<title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,11 +28,27 @@
 			<nav id="sidebar">
 				<div class="p-4 pt-5">
                     <img src="{{user.profile.image.url}}" class="author" width="200px" height="200px" alt="">
-                    <div class="welcome p-2"><h3>Welcome {{user.first_name}}</h3>
+                    <div class="welcome p-2"><h3></h3>
                         <a href=""><button class="btn btn-warning">Profile</button></a>
 
                     </div>
+                    <ul class="list-unstyled components mb-5">
+               <li >
+	            <a href="{% url 'userhome' %}" >Home</a>
+	          </li>
 
+	          <li >
+	            <a href="" >My Feed</a>
+	          </li>
+                <div class="footer">
+	        	<p>All rights reserved</p>
+
+	        </div>
+
+
+
+
+            </ul>
 
 
 	      </div>
@@ -57,18 +73,20 @@
              </nav>
 
 
+
                 <div class="container mt-5">
                     <div class="row justify-content-center ">
                         <div class="card col-md-8 col-sm-12 shadow-sm ps-4">
                              <div class="content " >
                                 <img src="{{ profile.image.url }}" class="rounded-circle ms-5" width="200" height="200" />
+
                                 {% if profile.user %}
-                                <h3 class="p-2">Name: {{ profile.user.first_name }} <span>{{profile.user.last_name}}</span></h3>
+                                <h3 class="p-2">User: {{ profile.user}} </h3>
                                 {% endif %}
 
-                                {%if profile.gender%}
+
                                 <h3  class="p-2">Gender : {{profile.gender}}</h3>
-                                {% endif %}
+
                                 {% if profile.bio %}
                                 <h3  class="p-2">Bio: {{ profile.bio }}</h3>
                                 {% endif %}

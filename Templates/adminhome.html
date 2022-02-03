@@ -12,36 +12,27 @@
 		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
 
       <style>
-
-
-    .head_text {
-        color: white;
-    }
-
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
-
-
-    }
-    #sidebar{
-    background-color:#FFDEAD;
-    }
-       body{
+          a{
+          color:black;
+          }
+            body{
                 background-image: url("https://cdn.wallpapersafari.com/18/38/bp9GEo.jpg");
                 background-repeat: no-repeat;
                 background-attachment: fixed;
 
           }
-           h1{
+          #sidebar{
+          background-color:#FFDEAD;
+          }
+                 h1{
     font-family: 'Neonderthaw', cursive;
     color:orange;
     margin-left:50px;
     }
-
-</style>
+      </style>
   </head>
   <body>
 
@@ -49,25 +40,14 @@
 			<nav id="sidebar">
 				<div class="p-4 pt-5">
 
-                    <img src="{{user.profile.image.url}}" class="author" width="200px" height="200px" alt="">
-                    <div class="welcome"><h4>Welcome </h4><h5>{{user.email}}</h5>
-                        <a href="{% url 'profile' user.profile.id %}"><button class="btn btn-warning">Profile</button></a>
+                    <div class="welcome"><h3>Welcome </h3><h5>{{user.email}}</h5>
+
 
                     </div>
 
 
 
-	        <ul class="list-unstyled components mb-5">
-                 <li class="active">
-	            <a href="{% url 'myarticles' %}" >Home</a>
-	          </li>
 
-	          <li >
-	            <a href="{% url 'myarticles' %}" >My Feed</a>
-	          </li>
-              <li >
-	            <a href="{% url 'createarticle' %}" >Create Article</a>
-	          </li>
 
 
 
@@ -75,14 +55,9 @@
 
             </ul>
 
-	        <div class="footer">
-	        	<p>All rights reserved</p>
-
-	        </div>
 
 	      </div>
     	</nav>
-
 
         <!-- Page Content  -->
             <div id="content" class="p-1 p-md-0">
@@ -90,7 +65,7 @@
                 <nav class="navbar navbar-inverse container " style="background-color: navajowhite;">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                         <h1>Bloggify</h1>
+                             <h1>Bloggify</h1>
                         </div>
 
 
@@ -101,26 +76,22 @@
                          </ul>
                     </div>
                 </nav>
-                    <header class="masthead">
+                <div class="container">
+                    <div class="row">
+                         <div class="col-3">
 
-        <!-- Blog Entries Column -->
-                        <div class="col-md-11 mt-3 left">
-                            {% for article in articles %}
-                            <div class="card mb-1">
-                                <div class="card-body">
-                                    <h2 class="card-title">{{ article.title }}</h2>
-                                    <p class="card-text text-muted h6">{{ article.author }} | {{ article.created_on}} </p>
-                                    <p class="card-text">{{article.body|slice:":200" }}</p>
-                                    <a href="{%url 'articledetail' article.id %}" class="btn btn-primary">Read More &rarr;</a>
-                                </div>
-                            </div>
-                            {% endfor %}
                         </div>
+                        <div class="col-4">
+                           <a href="{% url 'userlist' %}"><h2>Users</h2><i class="fas fa-5x fa-users p-1"></i></a>
 
+                        </div>
+                        <div class="col-3">
+                            <a href="{% url 'userposts' %}"><h2>Posts</h2><i class="fas fa-5x fa-mail-bulk p-1"></i></a>
 
+                        </div>
                     </div>
-
                 </div>
+
 
             </div>
         </div>
@@ -132,6 +103,3 @@
     <script src="{% static 'main/js/main.js' %}"></script>
   </body>
 </html>
-
-
-

@@ -3,7 +3,7 @@ from django.db import models
 
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, email, phone, password=None):
+    def create_user(self, name, email, phone, password=None):
         """
         Creates and saves a User with the given email, date of
         birth and password.
@@ -12,7 +12,7 @@ class MyUserManager(BaseUserManager):
             raise ValueError('Users must have an email address')
 
         user = self.model(
-
+            Name = Name,
             email=self.normalize_email(email),
             phone=phone,
 
@@ -41,7 +41,7 @@ class MyUserManager(BaseUserManager):
 
 
 class MyUser(AbstractBaseUser):
-
+    Name = models.CharField(max_length=100,null=True)
     email = models.EmailField(
         verbose_name='email address',
         max_length=255,

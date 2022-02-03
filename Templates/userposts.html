@@ -1,0 +1,117 @@
+<!doctype html>
+{%load static%}
+<html lang="en">
+  <head>
+  	<title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <style>
+          a{
+          color:white;
+          }
+              .card{
+    float:left;
+    padding:10px;
+    margin-left:50px;
+    margin-top:15px;
+    }
+    a{
+    color:white;
+    }
+      body{
+                background-image: url("https://cdn.wallpapersafari.com/18/38/bp9GEo.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+
+          }
+          #sidebar{
+    background-color:#FFDEAD;
+    }
+    #button{
+    margin-left:900px;
+    margin-top: 10px;
+    }
+
+      </style>
+  </head>
+  <body>
+
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+
+                    <div class="welcome"><h3>Welcome </h3><h5>{{user.email}}</h5>
+
+
+
+
+
+
+
+
+	      </div>
+    	</nav>
+                 <div id="content" class="p-1 p-md-0">
+
+                <nav class="navbar navbar-inverse container " style="background-color: navajowhite;">
+                    <a href="{% url 'adminhome' %}"><i class="fas fa-home"></i>Home</a>
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+
+                        </div>
+                         <form class="d-flex" method="GET" action="{% url 'postsearch' %}" enctype="multipart/form-data">
+                            {%csrf_token%}
+                            <div class="input-group">
+
+                                <input type="text" id="basic-addon1"  placeholder="Author or Title" aria-label="Username" aria-describedby="basic-addon1" name='query' value="{{ request.GET.query }}">
+                                <button style="border: none; background-color: transparent; box-shadow: none" type="submit"><i class="fas fa-search"></i></button>
+                            </div>
+                         </form>
+
+                        <ul class="nav navbar-nav">
+
+                            <li class="active"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
+
+                         </ul>
+                    </div>
+                </nav>
+                     <div class="dropdown" id="button">
+  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"  aria-expanded="false">
+    Select
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="userposts{%for post in posts%}?OLD={{post.id}}{%endfor%}%}">Oldest</a></li>
+    <li><a class="dropdown-item" href="userposts{%for post in posts%}?NEW={{post.id}}{%endfor%}%}">Newest</a></li>
+
+  </ul>
+</div>
+
+                 {%for post in posts%}
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{post.image.url}}" class="author" width="200px" height="200px" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{post.title}}</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{post.author}}</li>
+                        </ul>
+                        <button class="btn btn-primary"><a href="{% url 'postdetail' post.id %}">View</a></button>
+                    </div>
+                     {%endfor%}
+
+
+
+
+                 </div>
+        </div>
+
+  </body>
+</html>

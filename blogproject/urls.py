@@ -25,6 +25,7 @@ urlpatterns = [
     path('authapp/',include('authapp.urls')),
     path('',views.loghome,name='loghome'),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('posts/',include('posts.urls'))
+    path('posts/',include('posts.urls')),
+    path('admins/',include('blogadmin.urls'))
 
 ]+  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

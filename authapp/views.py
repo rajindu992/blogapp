@@ -25,8 +25,12 @@ class SignUp(CreateView):
 
 def loghome(request):
     if request.user.is_authenticated:
-        return redirect('posts/articlelist')
-    elif request.user is None:
-        messages.error(request,"No such user")
+        if request.user.is_admin:
+            return redirect('admins/adminhome')
+        else:
+            return redirect('posts/articlelist')
 
     return render(request, 'registration/loghome.html')
+
+
+

@@ -16,16 +16,20 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from django.views.static import serve
 
-from authapp import views
+from blogproject.authapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('authapp/',include('authapp.urls')),
     path('',views.loghome,name='loghome'),
     path('accounts/',include('django.contrib.auth.urls')),
     path('posts/',include('posts.urls')),
-    path('admins/',include('blogadmin.urls'))
+    path('admins/',include('blogadmin.urls')),
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 
 ]+  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

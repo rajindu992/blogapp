@@ -29,7 +29,7 @@ class MyUserManager(BaseUserManager):
         """
         user = self.create_user(
 
-            email,
+            email=email,
 
             password=password,
             phone=phone,

@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +28,6 @@ SECRET_KEY = 'django-insecure-3@bvr+y%_xmsj!hua7zlz@g6&7(zq#i$^o#z7fhi2(+vp48s0b
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','indubloggify.herokuapp.com']
-
 
 # Application definition
 
@@ -142,3 +143,5 @@ LOGOUT_REDIRECT_URL ='loghome'
 
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+import django_heroku
+django_heroku.settings(locals())

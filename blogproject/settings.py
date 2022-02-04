@@ -56,6 +56,7 @@ MIDDLEWARE = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ROOT_URLCONF = 'blogproject.urls'
 WHITENOISE_USE_FINDERS = True
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

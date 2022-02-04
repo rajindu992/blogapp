@@ -139,3 +139,6 @@ LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL='loghome'
 
 LOGOUT_REDIRECT_URL ='loghome'
+
+
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'

@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic'
+
     'django.contrib.staticfiles',
     'authapp',
     'crispy_forms',
@@ -55,8 +55,7 @@ MIDDLEWARE = [
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 ROOT_URLCONF = 'blogproject.urls'
-WHITENOISE_USE_FINDERS = True
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

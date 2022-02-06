@@ -85,7 +85,7 @@ DATABASES={
       'NAME': 'blog',
       'USER': 'postgres',
       'PASSWORD': 'django123',
-      'HOST': 'localhost',
+      'HOST': 'db',
       'PORT': '5432',
    }
 }

@@ -59,7 +59,7 @@ class ArticleUpdate(UpdateView):
     model = Article
     form_class = ArticleForm
     template_name = 'updatearticle.html'
-    success_url = reverse_lazy('articlelist')
+    success_url = reverse_lazy('myarticles')
     pk_url_kwarg = 'id'
 
 @method_decorator(signin_required, name="dispatch")

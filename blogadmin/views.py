@@ -50,9 +50,9 @@ class UserList(ListView):
         ZTOAID = self.request.GET.get('ZTOA')
 
         if ATOZID:
-            user_posts = MyUser.objects.annotate(total_posts=Count('article')).exclude(is_admin=True).order_by('Name')
+            user_posts = MyUser.objects.annotate(total_posts=Count('article')).exclude(is_admin=True).order_by('full_name')
         if ZTOAID:
-            user_posts = MyUser.objects.annotate(total_posts=Count('article')).exclude(is_admin=True).order_by('-Name')
+            user_posts = MyUser.objects.annotate(total_posts=Count('article')).exclude(is_admin=True).order_by('-full_name')
         context = super(UserList, self).get_context_data(*args, **kwargs)
         context['user_posts'] = user_posts
 
@@ -87,7 +87,7 @@ class UserSearch(View):
     def get(self, request, *args, **kwargs):
         query = self.request.GET.get('query')
         profile_list = MyUser.objects.filter(
-            Q(Name__contains=query) | Q(email__contains=query)
+            Q(full_name__contains=query) | Q(email__contains=query)
         ).exclude(is_admin=True)
 
         context = {
@@ -102,7 +102,7 @@ class PostSearch(View):
         query = self.request.GET.get('query')
         try:
             post_list = Article.objects.filter(
-                Q(author__Name__icontains=query) | Q(title__icontains=query))
+                Q(author__full_name__icontains=query) | Q(title__icontains=query))
 
         except:
             messages.error(request, "No posts to show")

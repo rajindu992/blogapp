@@ -42,7 +42,7 @@ class AdminHome(TemplateView):
 class UserList(ListView):
     model = MyUser
     template_name = 'userlist.html'
-    ordering = ['Name']
+    ordering = ['full_name']
 
     def get_context_data(self, *args, **kwargs):
         user_posts = MyUser.objects.annotate(total_posts=Count('article')).exclude(is_admin=True)

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0a56a1cb-c4eb-4066-b445-5c26bf0c6deb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogadmin/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/updatearticle.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/updatearticle.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,11 +35,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/admin/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/staticfiles" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\staticfiles" />
       <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\static\admin\css" />
       <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\Templates\main" />
       <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\avatar" />

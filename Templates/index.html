@@ -74,13 +74,13 @@
 		<div class="card">
 			<div class="row">
 				<div class="col-md-5 wrapthumbnail">
-					<a href="post.html">
+
 						<div class="thumbnail" >
 							{%if article.image%}
 							<img src="{{article.image.url }}" width="230px" height="230px" alt="">
 							{%endif%}
 						</div>
-					</a>
+
 				</div>
 				<div class="col-md-7">
 					<div class="card-block">
@@ -89,10 +89,10 @@
 						<div class="metafooter">
 							<div class="wrapfooter">
 								<span class="meta-footer-thumb">
-								<a href="author.html"><img class="author-thumb" src="{{article.author.profile.image.url}}" alt="Sal"></a>
+								<img class="author-thumb" src="{{article.author.profile.image.url}}" alt="Sal">
 								</span>
 								<span class="author-meta">
-								<span class="post-name"><a href="author.html">{{article.author}}</a></span><br/>
+								<span class="post-name">{{article.author}}</span><br/>
 								<span class="post-date">{{article.created_on}}</span><span class="dot"></span><span class="post-read"></span>
 								</span>
 

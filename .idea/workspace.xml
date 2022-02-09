@@ -2,7 +2,88 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a56a1cb-c4eb-4066-b445-5c26bf0c6deb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/avatar/10076ec1bb77e34f7ebe2be73e1099c8_kF2rtkL.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/th_5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/mediumish.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/default-img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/demopic/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/demopic/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/demopic/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/demopic/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/demopic/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/demopic/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/demopic/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/demopic/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/demopic/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/demopic/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/img/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/ie10-viewport-bug-workaround.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/mediumish.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/css/templatemo-xtra-blog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/css/all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/fontawesome/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/about-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/about-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/about-03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/about-04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/about-05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/comment-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/comment-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/img-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/img-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/img-03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/img-04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/img-05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staticfiles/assets/img/img-06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/adminhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/adminhome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/articledetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/articledetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/articlelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/articlelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/deletearticle.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/deletearticle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/deleteprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/deleteprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/myarticles.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/myarticles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/postdetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/postdetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/postsearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/postsearch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/registration/loghome.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/registration/loghome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/updatearticle.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/updatearticle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/updateprofile.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/updateprofile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/userhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/userhome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/userlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/userlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/userposts.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/userposts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogadmin/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogadmin/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blogproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogproject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogproject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,8 +93,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -34,15 +115,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/staticfiles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../social/social" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\static\assets" />
       <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\staticfiles" />
+      <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\staticfiles\assets" />
       <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\static\admin\css" />
       <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\Templates\main" />
-      <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\avatar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\rajin\OneDrive\Desktop\Blog App\blogproject\static" />

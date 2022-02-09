@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
+from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView,TemplateView
 
 from posts.forms import ArticleForm, ProfileForm
 from posts.models import Article, Profile
-
+from authapp.models import MyUser
 from posts.decorators import signin_required
 
 
@@ -20,17 +20,20 @@ class CreateArticle(CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+
 @method_decorator(signin_required, name="dispatch")
 class ProfileView(DetailView):
     model = Profile
     template_name = 'profile.html'
     pk_url_kwarg = 'id'
 
+
 @method_decorator(signin_required, name="dispatch")
 class ArticleList(ListView):
     model = Article
     template_name = 'articlelist.html'
     context_object_name = 'articles'
+
 
 @method_decorator(signin_required, name="dispatch")
 class ArticleDetail(DetailView):
@@ -47,12 +50,14 @@ class ProfileUpdate(UpdateView):
     success_url = reverse_lazy('userhome')
     pk_url_kwarg = 'id'
 
+
 @method_decorator(signin_required, name="dispatch")
 class ProfileDelete(DeleteView):
-    model = Profile
+    model = MyUser
     template_name = 'deleteprofile.html'
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('userlist')
     pk_url_kwarg = 'id'
+
 
 @method_decorator(signin_required, name="dispatch")
 class ArticleUpdate(UpdateView):
@@ -62,13 +67,13 @@ class ArticleUpdate(UpdateView):
     success_url = reverse_lazy('myarticles')
     pk_url_kwarg = 'id'
 
+
 @method_decorator(signin_required, name="dispatch")
 class ArticleDelete(DeleteView):
     model = Article
     template_name = 'deletearticle.html'
-    success_url = reverse_lazy('articlelist.html')
+    success_url = reverse_lazy('userhome')
     pk_url_kwarg = 'id'
-
 
 
 @method_decorator(signin_required, name="dispatch")
@@ -80,3 +85,9 @@ class MyArticle(ListView):
 
     def get_queryset(self):
         return Article.objects.filter(author=self.request.user)
+
+
+class IndexView(ListView):
+    model =Article
+    template_name = 'index.html'
+    context_object_name ='articles'

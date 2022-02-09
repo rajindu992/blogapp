@@ -1,105 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 {%load static%}
 <html lang="en">
-  <head>
-  	<title></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="assets/img/favicon.ico">
+<title>Mediumish - A Blog to learn and teach</title>
+<!-- Bootstrap core CSS -->
+<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="{% static 'assets/css/mediumish.css' %}" rel="stylesheet">
+</head>
+<body>
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+<!-- Begin Nav
+================================================== -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="container">
+	<!-- Begin Logo -->
+	<a class="navbar-brand" href="index.html">
+	<img src="{% static 'assets/img/logo.png' %}" alt="logo">
+	</a>
+	<!-- End Logo -->
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<!-- Begin Menu -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+			<a class="nav-link" href="{% url 'userlist' %}">Users List<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="{%url 'userposts' %}">Post List</a>
+			</li>
+            <li class="nav-item">
+			<a class="nav-link" href="{%url 'logout' %}">Log Out</a>
+			</li>
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-            <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
+		</ul>
+		<!-- End Menu -->
+		<!-- Begin Search -->
 
-      <style>
-          a{
-          color:black;
-          }
-            body{
-                background-image: url("https://cdn.wallpapersafari.com/18/38/bp9GEo.jpg");
-                background-repeat: no-repeat;
-                background-attachment: fixed;
+	</div>
+</div>
+</nav>
+<!-- End Nav
+================================================== -->
 
-          }
-          #sidebar{
-          background-color:#FFDEAD;
-          }
-                 h1{
-    font-family: 'Neonderthaw', cursive;
-    color:orange;
-    margin-left:50px;
-    }
-      </style>
-  </head>
-  <body>
+<!-- Begin Site Title
+================================================== -->
+<div class="container">
+	<div class="mainheading">
+		<h1 class="sitetitle">Mediumish</h1>
+		<p class="lead">
+			 A Blog, to learn and let learn!!
+		</p>
+	</div>
+<!-- End Site Title
+================================================== -->
 
-		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
-				<div class="p-4 pt-5">
+	<!-- Begin Featured
+	================================================== -->
+	<section class="featured-posts">
+	<div class="section-title">
+		<h2><span></span></h2>
+	</div>
+	<div class="card-columns listfeaturedtag">
+			{%for article in articles%}
+		<!-- begin post -->
+		<div class="card">
+			<div class="row">
+				<div class="col-md-5 wrapthumbnail">
+					<a href="post.html">
+						<div class="thumbnail" >
+							{%if article.image%}
+							<img src="{{article.image.url }}" width="230px" height="230px" alt="">
+							{%endif%}
+						</div>
+					</a>
+				</div>
+				<div class="col-md-7">
+					<div class="card-block">
+						<h2 class="card-title"><a href="{% url 'postdetail' article.id%}">{{article.title}}</a></h2>
+						<h4 class="card-text">{{article.body|slice:":50" }}</h4>
+						<div class="metafooter">
+							<div class="wrapfooter">
+								<span class="meta-footer-thumb">
+								<a href="author.html"><img class="author-thumb" src="{{article.author.profile.image.url}}" alt="Sal"></a>
+								</span>
+								<span class="author-meta">
+								<span class="post-name"><a href="author.html">{{article.author}}</a></span><br/>
+								<span class="post-date">{{article.created_on}}</span><span class="dot"></span><span class="post-read"></span>
+								</span>
 
-                    <div class="welcome"><h3>Welcome </h3><h5>{{user.email}}</h5>
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-            </ul>
-
-
-	      </div>
-    	</nav>
-
-        <!-- Page Content  -->
-            <div id="content" class="p-1 p-md-0">
-
-                <nav class="navbar navbar-inverse container " style="background-color: navajowhite;">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                             <h1>Bloggify</h1>
-                        </div>
-
-
-                        <ul class="nav navbar-nav">
-
-                            <li class="active"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
-
-                         </ul>
-                    </div>
-                </nav>
-                <div class="container">
-                    <div class="row">
-                         <div class="col-3">
-
-                        </div>
-                        <div class="col-4">
-                           <a href="{% url 'userlist' %}"><h2>Users</h2><i class="fas fa-5x fa-users p-1"></i></a>
-
-                        </div>
-                        <div class="col-3">
-                            <a href="{% url 'userposts' %}"><h2>Posts</h2><i class="fas fa-5x fa-mail-bulk p-1"></i></a>
-
-                        </div>
-                    </div>
-                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{%endfor%}
+		<!-- end post -->
 
 
-            </div>
-        </div>
 
 
-    <script src="{% static 'main/js/jquery.min.js' %}"></script>
-    <script src="{% static 'main/js/popper.js' %}"></script>
-    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'main/js/main.js' %}"></script>
-  </body>
+	</div>
+	</section>
+	<!-- End Featured
+	================================================== -->
+
+	<!-- Begin List Posts
+	================================================== -->
+
+	<!-- End List Posts
+	================================================== -->
+
+	<!-- Begin Footer
+	================================================== -->
+	<div class="footer">
+		<p class="pull-left">
+			 Copyright &copy; 2017 Your Website Name
+		</p>
+		<p class="pull-right">
+			 Mediumish Theme by <a target="_blank" href="https://www.wowthemes.net">WowThemes.net</a>
+		</p>
+		<div class="clearfix">
+		</div>
+	</div>
+	<!-- End Footer
+	================================================== -->
+
+</div>
+<!-- /.container -->
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+</body>
 </html>

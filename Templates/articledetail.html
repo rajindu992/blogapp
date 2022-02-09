@@ -1,129 +1,124 @@
-<!doctype html>
-{%load static%}
+<!DOCTYPE html>
+{%load static %}
 <html lang="en">
-  <head>
-  	<title></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="assets/img/favicon.ico">
+<title>Mediumish - A Medium style template by WowThemes.net</title>
+<!-- Bootstrap core CSS -->
+<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="{% static 'assets/css/mediumish.css' %}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-      <style>
-    #sidebar{
-    background-color:#FFDEAD;
-    }
 
+</head>
+<body>
 
-    .head_text {
-        color: white;
-    }
+<!-- Begin Nav
+================================================== -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="container">
+	<!-- begin logo -->
+	<a class="navbar-brand" href="index.html">
+    <img src="assets/img/logo.png" alt="">
+  </a>
+	<!-- end logo -->
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<!-- begin menu -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+			<a class="nav-link" href="{%url 'userhome' %}">Home<span class="sr-only">(current)</span></a>
+			</li>
+      <li class="nav-item">
+			<a class="nav-link" href="post.html"></a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="author.html"></a>
+			</li>
+             <li class="nav-item">
+			<a class="nav-link" href="{% url 'profile' user.profile.id%} "><i class="fas fa-user"></i>
+            </a>
+			</li>
+		</ul>
+		<!-- end menu -->
+		<!-- begin search -->
 
-    .container2{
-        box-shadow: 0 16px 48px #E3E7EB;
-        width:100%;
+	</div>
+</div>
+</nav>
 
+<div class="graybg authorpage">
+	<div class="container">
+		<div class="listrecent listrelated">
 
-    }
-       body{
-                background-image: url("https://cdn.wallpapersafari.com/18/38/bp9GEo.jpg");
-                background-repeat: no-repeat;
-                background-attachment: fixed;
+				<!-- begin post -->
+				<div class="authorpostbox">
+					<div class="card">
+						<a href="author.html">
+							{%if article.image%}
+						<img class="img-fluid img-thumb" src="{{article.image.url}}" alt="">
+							{%endif%}
+						</a>
+						<div class="card-block">
+							<h2 class="card-title"><a href="post.html">{{article.title}}</a></h2>
+              <h4 class="card-text">{{article.body}}</h4>
+            	<div class="metafooter">
+								<div class="wrapfooter">
+									<span class="meta-footer-thumb">
 
-          }
+									</span>
+									<span class="author-meta">
+									<span class="post-name"><a href="author.html"></a></span><br/>
+									<span class="post-date">{{article.created_on}}}}</span><span class="dot"></span><span class="post-read"></span>
+									</span>
 
-</style>
-  </head>
-  <body>
-
-		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
-				<div class="p-4 pt-5">
-                    <img src="{{user.profile.image.url}}" class="author" width="200px" height="200px" alt="">
-                    <div class="welcome"><h3>Welcome </h3>
-                        <a href="{% url 'profile' user.profile.id %}"><button class="btn btn-warning">Profile</button></a>
-
-                    </div>
-
-
-
-	        <ul class="list-unstyled components mb-5">
-                 <li >
-	            <a href="{% url 'userhome' %}" >Home</a>
-	          </li>
-
-	          <li >
-	            <a href="" >My Posts</a>
-	          </li>
-
-
-
-
-
-
-            </ul>
-
-	        <div class="footer">
-	        	<p>All rights reserved</p>
-
-	        </div>
-
-	      </div>
-    	</nav>
-
-
-        <!-- Page Content  -->
-            <div id="content" class="p-1 p-md-0">
-
-                <nav class="navbar navbar-inverse container " style="background-color: navajowhite;">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-
-                        </div>
-
-
-                        <ul class="nav navbar-nav">
-
-                            <li class="active"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
-
-                         </ul>
-                    </div>
-                </nav>
-                    <header class="masthead">
-
-
-
-                <div class="container  p-2 mb-2" style="border:1px solid #cecece">
-                    <div class="col-sm-10">
-                        <h2>{{article.title}}</h2>
-                        {%if article.author.image%}
-                        <p><img src="{{article.author.image.url}}" class="author" height="100px" width="100px" alt=""></p>
-                        {%endif%}
-                        <strong> <h3>{{article.author}}</h3></strong>
-                        <p>{{article.created_on}}</p>
-
-                    </div>
-                        {%if article.image%}
-                            <p><img id='postimage' src="{{article.image.url}}" width="700px" height="500px" alt=""></p>
-                            {%endif%}
-                            <p>{{article.body}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end post -->
 
 
 
 
+		</div>
+	</div>
+</div>
+<!-- End Author Posts
 
-                </div>
 
+================================================== -->
+<div class="container">
+	<div class="footer">
+	  <p class="pull-left">
+	    Copyright &copy; 2017 Your Website Name
+	  </p>
+	  <p class="pull-right">
+	    Mediumish Theme by <a target="_blank" href="https://www.wowthemes.net">WowThemes.net</a>
+	  </p>
+	<div class="clearfix"></div>
+	</div>
+</div>
+<!-- End Footer
+================================================== -->
 
-            </div>
-        </div>
-
-    <script src="{% static 'main/js/jquery.min.js' %}"></script>
-    <script src="{% static 'main/js/popper.js' %}"></script>
-    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'main/js/main.js' %}"></script>
-  </body>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+</body>
 </html>

@@ -35,8 +35,10 @@ class SignIn(TemplateView):
                 return render(request, 'signin.html', {'form': form})
 
 
-class AdminHome(TemplateView):
+class AdminHome(ListView):
+    model = Article
     template_name = 'adminhome.html'
+    context_object_name ='articles'
 
 
 class UserList(ListView):

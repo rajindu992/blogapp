@@ -1,82 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 {%load static%}
 <html lang="en">
-  <head>
-  	<title>Dobble</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="assets/img/favicon.ico">
+<title>Mediumish - A Blog to learn and teach</title>
+<!-- Bootstrap core CSS -->
+<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="{% static 'assets/css/mediumish.css' %}" rel="stylesheet">
+</head>
+<body>
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+<!-- Begin Nav
+================================================== -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="container">
+	<!-- Begin Logo -->
+	<a class="navbar-brand" href="index.html">
+	<img src="{% static 'assets/img/logo.png' %}" alt="logo">
+	</a>
+	<!-- End Logo -->
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<!-- Begin Menu -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+			<a class="nav-link" href="{% url 'userlist' %}">Users List<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="{%url 'userposts' %}">Post List</a>
+			</li>
+            <li class="nav-item">
+			<a class="nav-link" href="{%url 'logout' %}">Log Out</a>
+			</li>
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-      <style>
-          .content h3{
-          margin-left:10px;
-          }
-          .content h3{
-          margin-left:100px;
-          }
-          h2{
-          text-align:center;
-          }
-          p{
-          margin-left:500px;
-          }
-                  .card{
-    float:left;
-    padding:10px;
-    margin-left:50px;
-    margin-top:15px;
-    }
-          #sidebar{
-    background-color:#FFDEAD;
-    }
-             body{
-                background-image: url("https://cdn.wallpapersafari.com/18/38/bp9GEo.jpg");
-                background-repeat: no-repeat;
-                background-attachment: fixed;
+		</ul>
+		<!-- End Menu -->
+		<!-- Begin Search -->
 
-          }
-      </style>
-  </head>
-  <body>
+	</div>
+</div>
+</nav>
+<!-- End Nav
+================================================== -->
 
-		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
-				<div class="p-4 pt-5">
-
-                    <div class="welcome"><h3></h3>
-
-
-                    </div>
-
-
-
-
-	        <div class="footer">
-	        	<p>All rights reserved</p>
-
-	        </div>
-
-	      </div>
-    	    </nav>
-             <div id="content" class="p-1 p-md-0">
-
-                <nav class="navbar navbar-inverse container " style="background-color: navajowhite;">
-                    <div class="container-fluid">
-                    <a href="{% url 'adminhome' %}"><i class="fas fa-home"></i>Home</a>
-
-
-                        <ul class="nav navbar-nav">
-
-                            <li class="active"><h4><a href="{% url 'logout' %}">Logout</a></h4></li>
-
-                         </ul>
-                    </div>
-                </nav>
+<!-- Begin Site Title
+================================================== -->
+<div class="container">
+	<div class="mainheading">
+		<h1 class="sitetitle">Mediumish</h1>
+		<p class="lead">
+			 A Blog, to learn and let learn!!
+		</p>
+	</div>
 
                 <div class="container">
                     {%if profile_list%}
@@ -103,11 +88,31 @@
             </div>
         </div>
 
+	<div class="footer">
+		<p class="pull-left">
+			 Copyright &copy; 2017 Your Website Name
+		</p>
+		<p class="pull-right">
+			 Mediumish Theme by <a target="_blank" href="https://www.wowthemes.net">WowThemes.net</a>
+		</p>
+		<div class="clearfix">
+		</div>
+	</div>
+	<!-- End Footer
+	================================================== -->
 
+</div>
+<!-- /.container -->
 
-    <script src="{% static 'main/js/jquery.min.js' %}"></script>
-    <script src="{% static 'main/js/popper.js' %}"></script>
-    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'main/js/main.js' %}"></script>
-  </body>
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/ie10-viewport-bug-workaround.js' %}"></script>
+</body>
 </html>
+
+
+

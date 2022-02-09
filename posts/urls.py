@@ -11,6 +11,7 @@ urlpatterns =[
     path('deleteprofile/<int:id>',views.ProfileDelete.as_view(),name='deleteprofile'),
     path('updatearticle/<int:id>',views.ArticleUpdate.as_view(),name='updatearticle'),
     path('deletearticle/<int:id>',views.ArticleDelete.as_view(),name='deletearticle'),
-    path('myarticles',views.MyArticle.as_view(),name='myarticles')
+    path('myarticles',views.MyArticle.as_view(),name='myarticles'),
+    path('index',views.IndexView.as_view(),name='index')
 
 ]

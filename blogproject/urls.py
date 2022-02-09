@@ -24,13 +24,14 @@ from authapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('authapp/',include('authapp.urls')),
+    # path('authapp/',include('authapp.urls')),
     path('',views.loghome,name='loghome'),
     path('accounts/',include('django.contrib.auth.urls')),
+    path('accounts/signup/',views.SignUp.as_view(),name='signup'),
     path('posts/',include('posts.urls')),
     path('admins/',include('blogadmin.urls')),
-    re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    # re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    # re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

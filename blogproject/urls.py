@@ -16,18 +16,18 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include, re_path,reverse_lazy
 from django.views.static import serve
-
+from authapp.admin import UserCreationForm
 from authapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # path('authapp/',include('authapp.urls')),
+    path('authapp/',include('authapp.urls')),
     path('',views.loghome,name='loghome'),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('accounts/signup/',views.SignUp.as_view(),name='signup'),
+   
     path('posts/',include('posts.urls')),
     path('admins/',include('blogadmin.urls')),
     # re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),

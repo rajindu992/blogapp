@@ -61,7 +61,7 @@
 				<!-- begin post -->
 				<div class="authorpostbox">
 					<div class="card">
-                        <h2>{{post.author.full_name}}</h2>
+
 
 
                             {%if post.image%}
@@ -78,7 +78,7 @@
 
 									</span>
 									<span class="author-meta">
-									<span class="post-name"><a href="author.html"></a></span><br/>
+									<span class="post-name">{{post.author.full_name}}: :{{post.author.email}}</span><br/>
 									<span class="post-date">{{post.created_on}}</span><span class="dot"></span><span class="post-read"></span>
 									</span>
 

@@ -84,8 +84,8 @@
 				</div>
 				<div class="col-md-7">
 					<div class="card-block">
-						<h2 class="card-title"><a href="post.html">{{article.title}}</a></h2>
-						<h4 class="card-text">{{article.body|slice:":50" }}</h4>
+						<h2 class="card-title"><a href="{% url 'login' %}">{{article.title}}</a></h2>
+						<h4 class="card-text">{{article.body|slice:":100" }}</h4>
 						<div class="metafooter">
 							<div class="wrapfooter">
 								<span class="meta-footer-thumb">

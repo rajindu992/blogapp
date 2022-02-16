@@ -9,22 +9,6 @@ from authapp.models import MyUser
 from posts.models import Profile
 
 
-# class SignUp(CreateView):
-#     model = MyUser
-#     form_class = UserCreationForm
-#     template_name = 'signup.html'
-#     success_url = reverse_lazy('userhome')
-# 
-#     def form_valid(self, form):
-#         if form.is_valid():
-#             user = form.save()
-#             user.set_password(user.password)
-#             profile, created = Profile.objects.get_or_create(user=user)
-# 
-#             login(self.request, user)
-#             return redirect('userhome')
-
-
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

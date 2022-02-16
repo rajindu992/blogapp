@@ -14,18 +14,13 @@ from pathlib import Path
 
 import django_heroku
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 
 SECRET_KEY = 'django-insecure-3@bvr+y%_xmsj!hua7zlz@g6&7(zq#i$^o#z7fhi2(+vp48s0b'
 
-
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','indubloggify.herokuapp.com']
-
+ALLOWED_HOSTS = ['127.0.0.1', 'indubloggify.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'authapp',
     'crispy_forms',
-    'posts','blogadmin',
+    'posts', 'blogadmin',
 ]
 
 MIDDLEWARE = [
@@ -71,21 +66,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blogproject.wsgi.application'
 
-
-
-
-DATABASES={
-   'default': {
-      'ENGINE': 'django.db.backends.postgresql',
-      'NAME': 'blog',
-      'USER': 'postgres',
-      'PASSWORD': 'django123',
-      'HOST': 'localhost',
-      'PORT': '5432',
-   }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog',
+        'USER': 'postgres',
+        'PASSWORD': 'django123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 AUTH_USER_MODEL = 'authapp.MyUser'
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -102,9 +93,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -113,26 +101,23 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-
-
-
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles'),
 
+MEDIA_URL = '/media/'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL ='login'
+LOGIN_URL = 'login'
 
 LOGOUT_URL = 'logout'
 
-LOGIN_REDIRECT_URL='loghome'
+LOGIN_REDIRECT_URL = 'loghome'
 
-LOGOUT_REDIRECT_URL ='loghome'
-
+LOGOUT_REDIRECT_URL = 'loghome'
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 

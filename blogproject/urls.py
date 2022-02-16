@@ -30,8 +30,8 @@ urlpatterns = [
    
     path('posts/',include('posts.urls')),
     path('admins/',include('blogadmin.urls')),
-    # re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    # re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

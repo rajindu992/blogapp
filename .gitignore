@@ -1,0 +1,27 @@
+## gitignore for Blogapp created on 07/02/2022
+
+#Pycharm
+.idea/
+
+
+#Distribution/packaging
+
+.Python
+lib/
+lib64/
+
+
+#DB
+
+.sqlite
+.DS_Store
+
+.cache
+
+
+##Django
+*.log
+.pot
+.pyc
+__pycache__/
+local.py

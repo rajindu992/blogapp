@@ -2,25 +2,29 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
+from django.contrib.auth import login, authenticate
 
 from authapp.admin import UserCreationForm
 from authapp.models import MyUser
 from posts.models import Profile
 
 
-class SignUp(CreateView):
-    model = MyUser
-    form_class = UserCreationForm
-    template_name = 'signup.html'
-    success_url = reverse_lazy('login')
-
-    def form_valid(self, form):
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user.set_password(user.password)
             profile, created = Profile.objects.get_or_create(user=user)
 
-        return super(SignUp, self).form_valid(form)
+            user.save()
+
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=user.email, password=raw_password)
+            login(request, user)
+            return redirect('userhome')
+    else:
+        form = UserCreationForm()
+    return render(request, 'signup.html', {'form': form})
 
 
 def loghome(request):
@@ -30,7 +34,4 @@ def loghome(request):
         else:
             return redirect('posts/articlelist')
 
-    return render(request, 'registration/loghome.html')
-
-
-
+    return redirect('posts/index')

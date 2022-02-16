@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,12 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
     <style>
-        body{
-                background-image: url("https://cdn.wallpapersafari.com/18/38/bp9GEo.jpg");
-                background-repeat: no-repeat;
-                background-attachment: fixed;
 
-          }
                 .row {
         box-shadow: 0 16px 48px #E3E7EB;
 
@@ -23,25 +19,23 @@
     height:100px;
     background-color:;
     }
-    h1{
-    font-family: 'Neonderthaw', cursive;
-    color:black;
-    margin-left:300px;
-    }
+
     </style>
 </head>
 <body>
 <nav class="navbar navbar-light ">
-  <div class="container-fluid">
-      <h1>Bloggify</h1>
-    <a class="navbar-brand" href="#">
+  <div class="container">
 
-
-    </a>
+	<div class="mainheading">
+		<h1 class="sitetitle"><img src="{% static 'assets/img/logo.png' %}" alt="logo"></h1>
+		<p class="lead">
+			 A Blog, to learn and let learn!!
+		</p>
+	</div>
   </div>
 </nav>
 
-                 <div class="container p-5 mb-2 mt-5" style="border:1px solid #cecece">
+                 <div class="container p-5 mb-2 mt-5" >
 
                     <div class="form-group">
                         <form method="post" action=""enctype="multipart/form-data">
@@ -56,7 +50,7 @@
                                             <div class="pull-right">
                                                 <div class="btn-group">
                                                     <div class="d-grid gap-2 ">
-                                                        <button class="btn btn-success ms-5 mt-4" type="submit">Create</button>
+                                                        <button class="btn btn-dark ms-5 mt-4" type="submit">Create</button>
                                                     </div>
                                                 </div>
                                             </div>

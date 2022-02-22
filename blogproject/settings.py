@@ -14,9 +14,15 @@ from pathlib import Path
 
 import django_heroku
 
+import environ
+
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-3@bvr+y%_xmsj!hua7zlz@g6&7(zq#i$^o#z7fhi2(+vp48s0b'
+SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = True
 
@@ -69,11 +75,11 @@ WSGI_APPLICATION = 'blogproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog',
-        'USER': 'postgres',
-        'PASSWORD': 'django123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME':  env("DATABASE_NAME"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD':env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
     }
 }
 AUTH_USER_MODEL = 'authapp.MyUser'

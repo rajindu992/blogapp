@@ -23,7 +23,7 @@ class SignIn(TemplateView):
     def post(self, request):
         form = forms.LoginForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['Email']
+            username = form.cleaned_data['email']
             password = form.cleaned_data['password']
             user = authenticate(request, username=username, password=password)
 

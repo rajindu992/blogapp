@@ -25,3 +25,8 @@ lib64/
 .pyc
 **__pycache__/
 local.py
+
+##media
+images/
+avatar/
+staticfiles/

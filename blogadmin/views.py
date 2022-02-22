@@ -52,9 +52,9 @@ class UserList(ListView):
         ZTOAID = self.request.GET.get('ZTOA')
 
         if ATOZID:
-            user_posts = MyUser.objects.annotate(total_posts=Count('article')).exclude(is_admin=True).order_by('full_name')
+            user_posts = user_posts.order_by('full_name')
         if ZTOAID:
-            user_posts = MyUser.objects.annotate(total_posts=Count('article')).exclude(is_admin=True).order_by('-full_name')
+            user_posts = user_posts.order_by('-full_name')
         context = super(UserList, self).get_context_data(*args, **kwargs)
         context['user_posts'] = user_posts
 
@@ -70,9 +70,9 @@ class UserPosts(ListView):
         OLDID = self.request.GET.get('OLD')
         NEWID = self.request.GET.get('NEW')
         if OLDID:
-            posts = Article.objects.order_by('created_on')
+            posts = posts.order_by('created_on')
         if NEWID:
-            posts = Article.objects.order_by('-created_on')
+            posts = posts.order_by('-created_on')
         context = super(UserPosts, self).get_context_data(*args, **kwargs)
         context['posts'] = posts
 

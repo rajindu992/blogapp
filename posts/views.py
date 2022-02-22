@@ -14,7 +14,7 @@ class CreateArticle(CreateView):
     model = Article
     form_class = ArticleForm
     template_name = 'userhome.html'
-    success_url = '/posts/articlelist'
+    success_url = reverse_lazy('userhome')
 
     def form_valid(self, form):
         form.instance.author = self.request.user

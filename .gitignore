@@ -23,5 +23,5 @@ lib64/
 *.log
 .pot
 .pyc
-__pycache__/
+**__pycache__/
 local.py

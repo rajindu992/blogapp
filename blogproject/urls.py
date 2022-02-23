@@ -18,18 +18,23 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include, re_path,reverse_lazy
 from django.views.static import serve
+from rest_framework_simplejwt.views import TokenRefreshView,TokenObtainPairView
+
 from authapp.admin import UserCreationForm
 from authapp import views
+from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path('authapp/',include('authapp.urls')),
     path('',views.loghome,name='loghome'),
     path('accounts/',include('django.contrib.auth.urls')),
-   
     path('posts/',include('posts.urls')),
     path('admins/',include('blogadmin.urls')),
+    path('api/v1/',include('blogapi.urls')),
+    path('api/token/',TokenObtainPairView.as_view(),name='token_obtain_pair'),
+    path('api/token/refresh',TokenRefreshView.as_view(),name='token_refresh')
+
 
 
 

@@ -6,14 +6,14 @@ from rest_framework import serializers
 
 
 class ArticleSerializer(ModelSerializer):
-    author = serializers.CharField()
+    author = serializers.CharField(read_only=True)
 
     class Meta:
         model = Article
-        fields = ['author', 'title', 'body', 'created_on']
+        fields = ['author','title', 'body', 'created_on']
 
     def create(self, validated_data):
-        return Article.objects.create(**validated_data, author=self.context['author'])
+        return Article.objects.create(**validated_data)
 
 
 class UserRegistrationSerializer(ModelSerializer):

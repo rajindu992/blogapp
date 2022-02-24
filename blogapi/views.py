@@ -1,10 +1,12 @@
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status, permissions, generics, authentication, mixins
+from rest_framework import status, permissions, generics, authentication, mixins, filters
 from rest_framework.authtoken.models import Token
+from rest_framework.filters import SearchFilter, OrderingFilter
 
-from posts.models import Article
+from authapp.models import MyUser
+from posts.models import Article, Profile
 from blogapi.serializers import ArticleSerializer, UserRegistrationSerializer, LoginSerializer
 
 from django.contrib.auth import authenticate, login, logout
@@ -12,11 +14,18 @@ from django.contrib.auth import authenticate, login, logout
 
 class ArticleCreate(generics.ListCreateAPIView):
     queryset = Article.objects.all()
+    filter_backends = [SearchFilter, OrderingFilter]
+    search_fields = ['author__email', 'title']
+    ordering_fields = ['author', 'created_on']
+
     serializer_class = ArticleSerializer
     permission_classes = (IsAuthenticated,)
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
+
+
+
 
 
 class ArticleDetail(generics.RetrieveUpdateDestroyAPIView):

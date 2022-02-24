@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from posts.models import Article
+from posts.models import Article, Profile
 
 from authapp.models import MyUser
 from rest_framework import serializers
@@ -10,7 +10,7 @@ class ArticleSerializer(ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ['author','title', 'body', 'created_on']
+        fields = ['id', 'author', 'title', 'body', 'created_on']
 
     def create(self, validated_data):
         return Article.objects.create(**validated_data)
